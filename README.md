@@ -1,48 +1,69 @@
-# Numerical Analysis Algorithms (CLI)
+# Numerical Analysis Algorithms
 
-A collection of algorithms for solving systems of linear equations and matrix operations, implemented in Python with an interactive Terminal User Interface (TUI) using `curses`.
+A collection of algorithms for solving systems of linear equations, matrix operations, and data approximation, implemented in Python.
 
 ## Overview
 
-Developed for the Numerical Analysis course, this project implements direct and iterative methods to solve linear algebra problems. It features a navigable menu system allowing users to input matrix dimensions and data directly in the terminal.
+Developed for the Numerical Analysis course, this repository contains tools for two main areas of computational mathematics:
+1.  **Linear Algebra:** Direct and iterative solvers for linear systems using a TUI (Terminal User Interface).
+2.  **Data Approximation:** Interpolation and Curve Fitting methods for analyzing datasets.
 
-## Implemented Methods
+## Modules
 
-The tool includes the following numerical strategies:
+### 1. Linear Algebra Solvers (`src/metodosPy.py`)
+Interactive tool built with `curses` for matrix operations. It features a navigation menu for selecting algorithms.
 
-| Category | Methods |
-| :--- | :--- |
-| **Basic Operations** | Determinant Calculation, Inverse Matrix |
-| **Direct Solvers** | Gaussian Elimination (Compact), Gauss-Jordan, LU Decomposition, Cholesky Decomposition |
-| **Iterative Solvers** | Jacobi Method, Gauss-Seidel Method |
-| **Triangular Systems** | Forward Substitution (Lower), Backward Substitution (Upper) |
+* **Direct Methods:**
+    * Gaussian Elimination (Compact)
+    * Gauss-Jordan
+    * LU Decomposition
+    * Cholesky Decomposition
+* **Iterative Methods:**
+    * Jacobi Method
+    * Gauss-Seidel Method
+* **Basic Operations:**
+    * Determinant Calculation
+    * Matrix Inversion
+    * Triangular System Solution (Lower/Upper)
 
-## Key Features
+### 2. Interpolation & Curve Fitting (`src/metodosPy2.py`)
+CLI tool for estimating functions based on discrete points and analyzing data trends (Work #2).
 
-* **Interactive Menu:** Navigation using keyboard arrows (Up/Down).
-* **Input Handling:** Robust reading of matrix elements and vectors via standard screen.
-* **Math Backend:** Utilizes `numpy` for array manipulation and linear algebra primitives.
-
-## Structure
-
-* `src/metodos.py`: Main application containing the `curses` menu loop and algorithm implementations.
-* `src/metodos2.py`: Supplementary methods and experiments.
+* **Interpolation:**
+    * Newton's Divided Differences
+    * Newton-Gregory (Forward Differences)
+* **Curve Fitting (Regression):**
+    * Linear Regression (Least Squares)
+    * Polynomial Regression (variable degree)
+    * Exponential Fit
+* **Statistical Metrics:**
+    * Coefficient of Determination ($R^2$) calculation
 
 ## Usage
 
-1.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+### Dependencies
+Install the required libraries:
+```bash
+pip install -r requirements.txt
 
-    *Note: The `curses` library is part of the standard Python library on Linux/macOS. Windows users may need to install `windows-curses`.*
+Running the Tools
 
-2.  **Run the application:**
-    ```bash
-    python src/metodos.py
-    ```
+For Linear Systems (Matrix Menu):
+Bash
 
-## Technologies
+python src/metodosPy.py
 
-* **Language:** Python 3
-* **Libraries:** Numpy, Curses (Standard Library)
+Note: Requires a terminal with curses support (Linux/macOS standard).
+
+For Interpolation and Fitting:
+Bash
+
+python src/metodosPy2.py
+
+Technologies
+
+    Language: Python 3
+
+    Libraries: Numpy, Curses (Standard Library)
+
+Developed by Kauã Junior Silva Soares.
